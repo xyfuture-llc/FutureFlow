@@ -5,11 +5,27 @@ import PackageDescription
 
 let package = Package(
     name: "FutureFlow",
-    targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
-        .executableTarget(
+    platforms: [
+        .iOS(.v14),
+        .macOS(.v11),
+        .tvOS(.v14),
+        .watchOS(.v7)
+    ],
+    products: [
+        .library(
             name: "FutureFlow",
+            targets: ["FutureFlow"]),
+    ],
+    targets: [
+        .target(
+            name: "FutureFlow",
+            dependencies: [],
             path: "Sources"),
-    ]
+//        .target(name: "ContentView")
+        .testTarget(
+            name: "FutureFlowTests",
+            dependencies: ["FutureFlow"],
+            path: "Tests/FutureFlowTests"),
+    ],
+    swiftLanguageVersions: [.v5]
 )
