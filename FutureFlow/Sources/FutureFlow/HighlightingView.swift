@@ -103,7 +103,7 @@ private extension HighlightingView {
                     previous: self.previous
                 )
             ZStack {
-                // TODO: Find a better way than this hacky method
+                // TODO: Find a better way than this hacky method (this is needed for now because we need the `v`'s frame in overlay.
                 v
                     .opacity(0)
             }
