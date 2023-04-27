@@ -52,6 +52,7 @@ struct ContentView: View {
         .green,
         .yellow
     ]
+    @State private var showTutorial: Bool = true
 
     var body: some View {
         VStack(spacing: 50) {
@@ -80,7 +81,7 @@ struct ContentView: View {
                 )
         }
         .padding()
-        .assembleSpotlightChunks(uniqueIdentifier: self.uniqueIdentifier, chunks: Array(TutorialChunks.allCases))
+        .assembleSpotlightChunks(uniqueIdentifier: self.uniqueIdentifier, chunks: Array(TutorialChunks.allCases), showTutorial: self.$showTutorial)
     }
 }
 

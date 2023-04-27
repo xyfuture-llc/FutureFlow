@@ -42,12 +42,12 @@ public extension View {
     ///   - chunks: An array of `FlowChunk` instances associated with the child views to be highlighted by the spotlight effect.
     ///
     /// - Returns: The modified view with the `HighlightingView` applied, containing the spotlight effect and its child views.
-    func assembleSpotlightChunks<Chunk: FlowChunk>(uniqueIdentifier: String, chunks: [Chunk]) -> some View {
+    func assembleSpotlightChunks<Chunk: FlowChunk>(uniqueIdentifier: String, chunks: [Chunk], showTutorial: Binding<Bool>) -> some View {
         let namespace = getNamespace(from: uniqueIdentifier)
 
         return HighlightingView(
             namespace: namespace,
-            showTutorial: .constant(true),
+            showTutorial: showTutorial,
             chunks: chunks
         ) {
             self

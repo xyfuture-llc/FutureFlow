@@ -55,7 +55,7 @@ internal struct SimpleInstructionsViewWrapper: View {
             ),
             showNext: .init(
                 get: {
-                    return self.currentInstructionIndex < instructions.count - 1 || self.currentGlobalIndex < self.globalMaxCount - 1
+                    return self.currentInstructionIndex < instructions.count || self.currentGlobalIndex < self.globalMaxCount
                 },
                 set: { _ in }
             )

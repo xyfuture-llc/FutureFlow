@@ -108,14 +108,15 @@ private extension HighlightingView {
                     .opacity(0)
             }
             .overlay(
-                GeometryReader { rr in
-                    v
-                        .frame(width: UIScreen.main.bounds.size.width)
-                        .offset(
-                            x: -(UIScreen.main.bounds.size.width - reader.size.width) / 2,
-                            y: self.getYOffset(position: v.position, in: v.position == .below ? reader.size : rr.size)
-                        )
-                }
+                    GeometryReader { rr in
+                        v
+                            .frame(width: UIScreen.main.bounds.size.width)
+                            .offset(
+                                x: -(UIScreen.main.bounds.size.width - reader.size.width) / 2,
+                                y: self.getYOffset(position: v.position, in: v.position == .below ? reader.size : rr.size)
+                            )
+                    }
+                        .opacity(self.showTutorial ? 1.0 : 0.0)
 
             )
 //            v
