@@ -83,15 +83,6 @@ internal struct SimpleInstructionsViewWrapper: View {
 //            self.currentInstructionIndex = instructions.count
 
         }
-        .overlay(
-            VStack {
-                Text("\(self.globalMaxCount)")
-                Text("\(self.currentGlobalIndex)")
-                Text("\(self.instructions.count)")
-                Text("\(self.currentInstructionIndex)")
-            }
-                .offset(x: 0, y: 100)
-        )
         .padding(.horizontal, 15)
 //        .onChange(of: self.currentInstructionIndex, perform: { newValue in
 //            // For the next button
