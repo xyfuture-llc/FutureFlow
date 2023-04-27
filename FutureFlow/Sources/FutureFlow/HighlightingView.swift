@@ -81,16 +81,12 @@ private extension HighlightingView {
     func advance() {
         if self.currentIndex < self.chunks.count - 1{
             self.currentIndex += 1
-        } else {
-            self.currentIndex = 0
         }
     }
 
     func previous() {
         if self.currentIndex > 0 {
             self.currentIndex -= 1
-        } else {
-            self.currentIndex = self.chunks.count - 1
         }
     }
 
