@@ -79,6 +79,11 @@ struct ContentView: View {
                     parentIdentifier: self.uniqueIdentifier,
                     chunk: self.tutorial[2]
                 )
+                .onTapGesture {
+//                    withAnimation(.linear) {
+                        self.showTutorial = true
+//                    }
+                }
         }
         .padding()
         .assembleSpotlightChunks(uniqueIdentifier: self.uniqueIdentifier, chunks: Array(TutorialChunks.allCases), showTutorial: self.$showTutorial)

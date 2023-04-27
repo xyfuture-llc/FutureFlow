@@ -34,32 +34,38 @@ internal struct HighlightingView<Content: View, Chunk: FlowChunk>: View {
         ZStack {
             self.content
 
-            SpotlightView(
-                chunk: self.chunks[self.currentIndex],
-                namespace: self.namespace,
-                namespace2: self.namespace2
-            )
-            .opacity(self.showTutorial ? 1 : 0)
-            .animation(
-                .easeOut,
-                value: self.showTutorial ? self.currentIndex : nil
-            )
-            .overlay(
-                GeometryReader { reader in
-                    instructionsOverlay(reader: reader)
-                        .animation(.easeOut, value: self.showTutorial ? self.currentIndex : nil)
-//                    Text("\(reader.size.width) X \(reader.size.height)")
-//                    ZStack {
-//                        Color.blue
-//                    }
+            ZStack {
+                if (self.showTutorial) {
+                    SpotlightView(
+                        chunk: self.chunks[self.currentIndex],
+                        namespace: self.namespace,
+                        namespace2: self.namespace2
+                    )
+                    .overlay(
+                        GeometryReader { reader in
+                            instructionsOverlay(reader: reader)
+                                .animation(.easeOut, value: self.showTutorial ? self.currentIndex : nil)
+                            //                    Text("\(reader.size.width) X \(reader.size.height)")
+                            //                    ZStack {
+                            //                        Color.blue
+                            //                    }
+                        }
+                            .matchedGeometryEffect(id: 10000, in: self.namespace2, isSource: false)
+                        //                    .overlay(
+                        //                        GeometryReader { reader in
+                        //                            Text("\(reader.size.width) X \(reader.size.height)")
+                        //                        }
+                        //                    )
+                    )
+                    .opacity(self.showTutorial ? 1 : 0)
+                    .animation(
+                        .easeOut,
+                        value: self.showTutorial ? self.currentIndex : nil
+                    )
                 }
-                    .matchedGeometryEffect(id: 10000, in: self.namespace2, isSource: false)
-//                    .overlay(
-//                        GeometryReader { reader in
-//                            Text("\(reader.size.width) X \(reader.size.height)")
-//                        }
-//                    )
-            )
+            }
+            .transition(.opacity)
+            .animation(.linear, value: self.showTutorial)
             
 
 //#if DEBUG
@@ -74,6 +80,13 @@ internal struct HighlightingView<Content: View, Chunk: FlowChunk>: View {
 //            }
 //#endif
         }
+        .onChange(of: self.showTutorial) { newValue in
+            if(newValue == false) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    self.currentIndex = 0
+                }
+            }
+        }
     }
 }
 
@@ -84,7 +97,9 @@ private extension HighlightingView {
             return
         }
 
-        self.showTutorial = false
+//        withAnimation(.easeOut) {
+            self.showTutorial = false
+//        }
     }
 
     func previous() {
