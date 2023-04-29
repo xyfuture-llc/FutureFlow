@@ -48,7 +48,7 @@ enum TutorialChunks: FlowChunk, CaseIterable {
 This is as simple as it gets; However you can customize it further by defining the spotlight shape, the type of background, or even include an instructions view (A view where you instruct the user why are you shining the spot light here).
 
 Here are the defined protocols
-```
+```Swift
     var spotlightShape: SpotlightShape { get }
     var spotlightBackground: SpotlightBackground { get }
 
@@ -88,7 +88,7 @@ enum TutorialChunks: FlowChunk, CaseIterable {
 ### Step 2
 After creating your enum you should create the view in which you want to shine spotlight on.
 
-```SwiftUI
+```Swift
 struct ContentView: View {
     var body: some View {
         VStack(spacing: 50) {
@@ -111,7 +111,7 @@ struct ContentView: View {
 
 Now you need to create a unique identifier for this view in which we will be using as well as a namespace and a variable to control if the spotlight view should be displayed or not (in this case I am calling it a "tutorial")
 
-```SwiftUI
+```Swift
 ...
     private var uniqueIdentifier: String = UUID().uuidString
     
@@ -156,7 +156,7 @@ The chunks provided must be of the same `FlowChunk` type as the one used by the 
 
 This is how the final view looks like 
 
-```SwiftUI
+```Swift
 struct ContentView: View {
     private var uniqueIdentifier: String = UUID().uuidString
     
