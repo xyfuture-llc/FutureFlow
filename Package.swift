@@ -21,12 +21,13 @@ let package = Package(
         .target(
             name: "FutureFlow",
             dependencies: [],
-            path: "FutureFlow/Sources"
+            path: "Sources",
+            exclude: ["../Examples"]
         ),
         .testTarget(
             name: "FutureFlowTests",
             dependencies: ["FutureFlow"],
-            path: "FutureFlow/Tests/FutureFlowTests"
+            path: "Tests/FutureFlowTests"
         ),
     ],
     swiftLanguageVersions: [.v5]
