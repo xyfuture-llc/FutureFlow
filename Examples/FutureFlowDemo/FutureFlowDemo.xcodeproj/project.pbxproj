@@ -39,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B643355129FDD16500E10D0E /* FutureFlow */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FutureFlow; path = ../..; sourceTree = "<group>"; };
 		B69AAB1429F31CF300026789 /* FutureFlowDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutureFlowDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69AAB1729F31CF300026789 /* FutureFlowDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureFlowDemoApp.swift; sourceTree = "<group>"; };
 		B69AAB1929F31CF300026789 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,9 +82,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B643355029FDD16500E10D0E /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				B643355129FDD16500E10D0E /* FutureFlow */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		B69AAB0B29F31CF300026789 = {
 			isa = PBXGroup;
 			children = (
+				B643355029FDD16500E10D0E /* Packages */,
 				B69AAB1629F31CF300026789 /* FutureFlowDemo */,
 				B69AAB2729F31CF500026789 /* FutureFlowDemoTests */,
 				B69AAB3129F31CF500026789 /* FutureFlowDemoUITests */,
