@@ -205,3 +205,18 @@ struct ContentView: View {
 ```
 
 That's it! This is the whole API. 
+
+## More
+You can browse teh source files to learn more about the other options available to you. You can also look at "Examples" directory as I will add more examples for different features/options.
+
+## Contributing
+Contributions are welcome!
+
+Have a look at [issues](https://github.com/xyfuture-llc/FutureFlow/issues) to see the project’s current needs. Don’t hesitate to create new issues, especially if you intend to work on them yourself.
+
+If you’d like to discuss something else, contact me directly.
+
+## License and Copyright
+FutureFlow is licensed under the MIT License. See the [LICENSE file](https://github.com/xyfuture-llc/FutureFlow/blob/main/LICENSE) for details.
+
+© 2023–2023 xyFuture, LLC 
