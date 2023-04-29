@@ -14,6 +14,7 @@ public extension View {
     /// This function should be used to mark individual child views within a parent view that has the `assembleSpotlightChunks` function applied to it.
     ///
     /// - Parameters:
+    ///   - namespace: The namespace that belongs to the view where the animations will be played.
     ///   - parentIdentifier: A unique string identifier for the parent view containing the spotlight effect.
     ///   - chunk: The `FlowChunk` associated with the current view, which determines the spotlight shape, background, and other properties.
     ///
@@ -37,8 +38,11 @@ public extension View {
     /// The chunks provided must be of the same `FlowChunk` type as the one used by the child views, to ensure that the spotlight effect works as intended.
     ///
     /// - Parameters:
+    ///   - namespace: The namespace that belongs to the view where the animations will be played.
     ///   - uniqueIdentifier: A unique string identifier for the parent view. This identifier must be the same as the one provided to the `configureChunkForSpotlight` function for child views.
     ///   - chunks: An array of `FlowChunk` instances associated with the child views to be highlighted by the spotlight effect.
+    ///   - showTutorial: A boolean variable to toggle the spotlight view on and off.
+    ///   - onStepChange: An optional callback method that will be triggered when the current step is changed, basically when the spotlight shines on a different element than the current element.
     ///
     /// - Returns: The modified view with the `HighlightingView` applied, containing the spotlight effect and its child views.
     func assembleSpotlightChunks<Chunk: FlowChunk>(namespace: Namespace.ID, uniqueIdentifier: String, chunks: [Chunk], showTutorial: Binding<Bool>, _ onStepChange: ((_ chunk: Chunk) -> ())? = nil) -> some View {
