@@ -203,6 +203,9 @@ struct ContentView: View {
     }
 }
 ```
+Here is a final look at what we created (well almost this gif is from the demo, but very close)
+
+![](https://github.com/xyfuture-llc/FutureFlow/blob/viewOnSpot/Examples/Assets/demo1.gif)
 
 That's it! This is the whole API. 
 
