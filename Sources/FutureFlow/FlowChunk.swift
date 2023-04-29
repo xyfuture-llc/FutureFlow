@@ -16,7 +16,7 @@ public protocol FlowChunk: Hashable, Identifiable {
         _ back: @escaping () -> ()
     ) -> AnyInstructionsView?
 
-    var instructionsViewPosition: InstructionsViewPosition { get }
+    var instructionsViewPosition: InstructionsViewPosition? { get }
 }
 
 public extension FlowChunk {
@@ -37,5 +37,9 @@ public extension FlowChunk {
         _ back: @escaping () -> ()
     ) -> AnyInstructionsView? {
         nil
+    }
+
+    var instructionsViewPosition: InstructionsViewPosition? {
+        return nil
     }
 }
