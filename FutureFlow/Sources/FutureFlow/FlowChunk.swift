@@ -11,7 +11,12 @@ public protocol FlowChunk: Hashable, Identifiable {
     var spotlightShape: SpotlightShape { get }
     var spotlightBackground: SpotlightBackground { get }
 
-    var instructionsViewType: InstructionsViewType? { get }
+    @InstructionsViewBuilder func instructionsView(
+        _ next: @escaping () -> (),
+        _ back: @escaping () -> ()
+    ) -> AnyInstructionsView?
+
+    var instructionsViewPosition: InstructionsViewPosition { get }
 }
 
 public extension FlowChunk {
@@ -27,7 +32,10 @@ public extension FlowChunk {
         return .black
     }
 
-    var instructionsViewType: InstructionsViewType? {
-        return nil
+    func instructionsView(
+        _ next: @escaping () -> (),
+        _ back: @escaping () -> ()
+    ) -> AnyInstructionsView? {
+        nil
     }
 }

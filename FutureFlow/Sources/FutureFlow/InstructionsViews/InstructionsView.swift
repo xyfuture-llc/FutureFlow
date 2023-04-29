@@ -7,21 +7,13 @@
 
 import SwiftUI
 
-public struct InstructionsView : View {
-    internal let position: InstructionsViewPosition
-    private let content: AnyView
+public protocol InstructionsView: View {
+}
 
-    internal init<Content: View>
-    (
-        position: InstructionsViewPosition = .below,
-        @ViewBuilder _ content: () -> Content
-    ) {
-        self.position = position
-        self.content = content().eraseToAnyView()
-    }
-
-    @_spi(Private)
-    public var body: some View {
-        self.content
+extension InstructionsView {
+    func eraseToAnyInstructionsView() -> AnyInstructionsView {
+        AnyInstructionsView(
+            self
+        )
     }
 }

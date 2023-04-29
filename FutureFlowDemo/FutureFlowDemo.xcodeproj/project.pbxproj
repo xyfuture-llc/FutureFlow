@@ -17,6 +17,7 @@
 		B69AAB4529F31E6700026789 /* FutureFlow in Frameworks */ = {isa = PBXBuildFile; productRef = B69AAB4429F31E6700026789 /* FutureFlow */; };
 		B69AAB4729F42F8900026789 /* Demo2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69AAB4629F42F8900026789 /* Demo2.swift */; };
 		B69AAB4929F44D2A00026789 /* Demo10.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69AAB4829F44D2A00026789 /* Demo10.swift */; };
+		B6B551EE29FDCB6E006CA32D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B6B551ED29FDCB6E006CA32D /* README.md */; };
 		B6C55E9729F5C75200E9E281 /* Demo11.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C55E9629F5C75200E9E281 /* Demo11.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		B69AAB3429F31CF500026789 /* FutureFlowDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureFlowDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B69AAB4629F42F8900026789 /* Demo2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo2.swift; sourceTree = "<group>"; };
 		B69AAB4829F44D2A00026789 /* Demo10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo10.swift; sourceTree = "<group>"; };
+		B6B551ED29FDCB6E006CA32D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B6C55E9629F5C75200E9E281 /* Demo11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo11.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,13 +105,11 @@
 		B69AAB1629F31CF300026789 /* FutureFlowDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B6B551EC29FDCB4E006CA32D /* NotRelated */,
 				B69AAB1729F31CF300026789 /* FutureFlowDemoApp.swift */,
 				B69AAB1929F31CF300026789 /* ContentView.swift */,
-				B69AAB4629F42F8900026789 /* Demo2.swift */,
 				B69AAB1D29F31CF400026789 /* Preview Content */,
 				B69AAB1B29F31CF400026789 /* Assets.xcassets */,
-				B69AAB4829F44D2A00026789 /* Demo10.swift */,
-				B6C55E9629F5C75200E9E281 /* Demo11.swift */,
 			);
 			path = FutureFlowDemo;
 			sourceTree = "<group>";
@@ -144,6 +144,17 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6B551EC29FDCB4E006CA32D /* NotRelated */ = {
+			isa = PBXGroup;
+			children = (
+				B69AAB4829F44D2A00026789 /* Demo10.swift */,
+				B6C55E9629F5C75200E9E281 /* Demo11.swift */,
+				B69AAB4629F42F8900026789 /* Demo2.swift */,
+				B6B551ED29FDCB6E006CA32D /* README.md */,
+			);
+			path = NotRelated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6B551EE29FDCB6E006CA32D /* README.md in Resources */,
 				B69AAB1F29F31CF400026789 /* Preview Assets.xcassets in Resources */,
 				B69AAB1C29F31CF400026789 /* Assets.xcassets in Resources */,
 			);

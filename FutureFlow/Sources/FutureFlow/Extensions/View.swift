@@ -18,8 +18,7 @@ public extension View {
     ///   - chunk: The `FlowChunk` associated with the current view, which determines the spotlight shape, background, and other properties.
     ///
     /// - Returns: The modified view with the matched geometry effect applied, allowing it to be highlighted by the spotlight effect.
-    func configureChunkForSpotlight<Chunk: FlowChunk>(parentIdentifier: String, chunk: Chunk) -> some View {
-        let namespace = getNamespace(from: parentIdentifier)
+    func configureChunkForSpotlight<Chunk: FlowChunk>(namespace: Namespace.ID, parentIdentifier: String, chunk: Chunk) -> some View {
 
         return self
             .matchedGeometryEffect(
@@ -42,22 +41,19 @@ public extension View {
     ///   - chunks: An array of `FlowChunk` instances associated with the child views to be highlighted by the spotlight effect.
     ///
     /// - Returns: The modified view with the `HighlightingView` applied, containing the spotlight effect and its child views.
-    func assembleSpotlightChunks<Chunk: FlowChunk>(uniqueIdentifier: String, chunks: [Chunk], showTutorial: Binding<Bool>) -> some View {
-        let namespace = getNamespace(from: uniqueIdentifier)
+    func assembleSpotlightChunks<Chunk: FlowChunk>(namespace: Namespace.ID, uniqueIdentifier: String, chunks: [Chunk], showTutorial: Binding<Bool>, _ onStepChange: ((_ chunk: Chunk) -> ())? = nil) -> some View {
 
-        return HighlightingView(
-            namespace: namespace,
-            showTutorial: showTutorial,
-            chunks: chunks
-        ) {
-            self
-        }
-    }
+        return (
+            HighlightingView(
+                namespace: namespace,
+                showTutorial: showTutorial,
+                chunks: chunks
+            ) {
+                self
+            }
+                .onStepChange(onStepChange ?? { _ in })
+        )
 
-    func convertToInstructionsView(position: InstructionsViewPosition) -> InstructionsView {
-        InstructionsView(position: position) {
-            self
-        }
     }
 }
 
@@ -68,19 +64,5 @@ public extension View {
         AnyView(
             self
         )
-    }
-}
-
-
-// MARK: - Helper Methods
-fileprivate extension View {
-    func getNamespace(from identifier: String) -> Namespace.ID {
-        if let existingNamespace = FutureFlowManager.currentNamespaces[identifier] {
-            return existingNamespace
-        } else {
-            let newNamespace = Namespace().wrappedValue
-            FutureFlowManager.currentNamespaces[identifier] = newNamespace
-            return newNamespace
-        }
     }
 }
