@@ -93,7 +93,7 @@ enum TutorialChunks: FlowChunk, CaseIterable {
         }
     }
     
-    var instructionsViewPosition: InstructionsViewPosition {
+    var instructionsViewPosition: InstructionsViewPosition? {
         switch self {
         case .red1, .red2, .red3:
             return .below
@@ -143,7 +143,6 @@ enum TutorialChunks: FlowChunk, CaseIterable {
         }
     }
 }
-
 
 struct ContentView: View {
     @State private var rectColor: Color = .red
