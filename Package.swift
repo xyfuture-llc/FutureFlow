@@ -21,7 +21,8 @@ let package = Package(
         .target(
             name: "FutureFlow",
             dependencies: [],
-            path: "Sources"
+            path: "Sources",
+            exclude: ["../Examples"]
         ),
         .testTarget(
             name: "FutureFlowTests",
@@ -31,3 +32,4 @@ let package = Package(
     ],
     swiftLanguageVersions: [.v5]
 )
+
