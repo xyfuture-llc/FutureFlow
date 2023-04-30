@@ -25,6 +25,8 @@ To be released
 
 
 ## Usage
+![](https://github.com/xyfuture-llc/FutureFlow/blob/viewOnSpot/Examples/Assets/demo1.gif)
+
 A full example can be found inside the `Examples` directory.
 
 In order to use FutureFlow you first need to create an `enum` that conforms to `FutureFlow` protocol (Conforming to `CaseIterable` is optional but it makes your life easy).
@@ -203,9 +205,6 @@ struct ContentView: View {
     }
 }
 ```
-Here is a final look at what we created (well almost this gif is from the demo, but very close)
-
-![](https://github.com/xyfuture-llc/FutureFlow/blob/viewOnSpot/Examples/Assets/demo1.gif)
 
 That's it! This is the whole API. 
 
