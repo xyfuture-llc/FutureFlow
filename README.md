@@ -25,7 +25,7 @@ To be released
 
 
 ## Usage
-![](https://github.com/xyfuture-llc/FutureFlow/blob/viewOnSpot/Examples/Assets/demo1.gif)
+![](https://github.com/xyfuture-llc/FutureFlow/blob/main/Examples/Assets/demo1.gif)
 
 A full example can be found inside the `Examples` directory.
 
