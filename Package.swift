@@ -22,7 +22,7 @@ let package = Package(
             name: "FutureFlow",
             dependencies: [],
             path: "Sources",
-            exclude: ["../Examples"]
+            exclude: ["./Examples"]
         ),
         .testTarget(
             name: "FutureFlowTests",
