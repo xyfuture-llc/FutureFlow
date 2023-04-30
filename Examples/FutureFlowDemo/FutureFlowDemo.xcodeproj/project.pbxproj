@@ -53,6 +53,7 @@
 		B69AAB3429F31CF500026789 /* FutureFlowDemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureFlowDemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B69AAB4629F42F8900026789 /* Demo2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo2.swift; sourceTree = "<group>"; };
 		B69AAB4829F44D2A00026789 /* Demo10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo10.swift; sourceTree = "<group>"; };
+		B6A3C7F729FEF19000FC384C /* FutureFlow */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FutureFlow; path = ../..; sourceTree = "<group>"; };
 		B6B551ED29FDCB6E006CA32D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B6C55E9629F5C75200E9E281 /* Demo11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo11.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +89,7 @@
 			children = (
 				B643355129FDD16500E10D0E /* FutureFlow */,
 				B643355229FDD35700E10D0E /* FutureFlow */,
+				B6A3C7F729FEF19000FC384C /* FutureFlow */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
