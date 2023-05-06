@@ -23,10 +23,10 @@ internal struct HighlightingView<Content: View, Chunk: FlowChunk>: View {
     let chunks: [Chunk]
     let content: () -> Content
 
-    #if DEBUG
+//    #if DEBUG
     // State variables (TODO: Delete)
     @State private var currentIndex: Int = 0
-    #endif
+//    #endif
 
     @Namespace private var namespace2
 
